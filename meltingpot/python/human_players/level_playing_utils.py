@@ -35,6 +35,8 @@ from meltingpot.python.utils.substrates import builder
 
 #import os
 #os.environ['SDL_VIDEODRIVER']='windib'
+import os
+os.environ["SDL_VIDEODRIVER"] = "dummy"
 
 WHITE = (255, 255, 255)
 
