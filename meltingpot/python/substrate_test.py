@@ -57,10 +57,10 @@ class SubstrateTest(parameterized.TestCase):
       np.testing.assert_equal(
           obs1, obs2, f'Episode {episode} mismatch: {obs1} != {obs2} ')
     
-    rwd1 = env1.reward_spec()
-    rwd2 = env2.reward_spec()
-    print("Reward for env1:", rwd1)
-    print("Reward for env2:", rwd2)
+      #rwd1 = env1.reward_spec()
+      #rwd2 = env2.reward_spec()
+      #print("Reward for env1:", rwd1)
+      #print("Reward for env2:", rwd2)
     
       
   @parameterized.product(seed=[None, 42, 123, 1337, 12481632])
@@ -78,6 +78,10 @@ class SubstrateTest(parameterized.TestCase):
           AssertionError,
           msg=f'Episodes {episode} and {episode+1} match: {last_obs} == {obs}'):
         np.testing.assert_equal(last_obs, obs)
+      rwd = env.reward_spec()
+  
+      print("Reward for env1:", rwd)
+     
 
   def test_no_seed_causes_nondeterminism(self):
     config = substrate.get_config('running_with_scissors_in_the_matrix')
