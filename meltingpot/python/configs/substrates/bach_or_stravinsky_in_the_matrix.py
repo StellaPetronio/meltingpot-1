@@ -53,6 +53,8 @@ RESOURCE2_COLOR_DATA = (RESOURCE2_COLOR, RESOURCE2_HIGHLIGHT_COLOR)
 
 # The procedural generator replaces all 'a' chars in the default map with chars
 # representing specific resources, i.e. with either '1' or '2'.
+
+#Q. Could we also change the format of the background/wall ?
 DEFAULT_ASCII_MAP = """
 WWWWWWWWWWWWWWWWWWWWWWWWW
 WPPPP      W W      PPPPW
@@ -97,6 +99,8 @@ CHAR_PREFAB_MAP = {
 
 _COMPASS = ["N", "E", "S", "W"]
 
+
+#this is the wall of the background of the game
 WALL = {
     "name": "wall",
     "components": [
@@ -124,11 +128,12 @@ WALL = {
                 "renderMode": "ascii_shape",
                 "spriteNames": ["Wall"],
                 "spriteShapes": [shapes.WALL],
-                "palettes": [{"*": (95, 95, 95, 255),
-                              "&": (100, 100, 100, 255),
-                              "@": (109, 109, 109, 255),
-                              "#": (152, 152, 152, 255)}],
-                "noRotates": [False]
+                #changing the background here: --> changing the colors
+                "palettes": [{"*": (95, 95, 95, 255), #(152, 152, 152, 255)
+                              "&": (100, 100, 100, 255), #(109, 109, 109, 255)
+                              "@": (109, 109, 109, 255), # (95, 95, 95, 255)
+                              "#": (152, 152, 152, 255)}], # (100, 100, 100, 255)
+                "noRotates": [False] #[True]
             }
         },
         {

@@ -281,7 +281,9 @@ def run_episode(
   observation_width = observation_shape[1]
   scale = min(screen_height // observation_height,
               screen_width // observation_width)
+  
   if interactive == RenderType.PYGAME:
+    pygame.init()
     game_display = pygame.display.set_mode(
         (observation_width * scale, observation_height * scale))
     clock = pygame.time.Clock()
