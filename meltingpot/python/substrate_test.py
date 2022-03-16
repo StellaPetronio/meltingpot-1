@@ -80,7 +80,9 @@ class SubstrateTest(parameterized.TestCase):
         np.testing.assert_equal(last_obs, obs)
       rwd = env.reward_spec()
   
-      print("Reward for env1:", rwd)
+      print("Reward for env:", rwd)
+      print("Shape first element:", rwd[0].shape)
+      print("Shape second element:", rwd[1].shape)
      
 
   def test_no_seed_causes_nondeterminism(self):
