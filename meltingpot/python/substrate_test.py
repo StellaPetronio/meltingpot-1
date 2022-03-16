@@ -53,9 +53,16 @@ class SubstrateTest(parameterized.TestCase):
     for episode in range(5):
       obs1 = env1.reset().observation[0]['WORLD.RGB']
       obs2 = env2.reset().observation[0]['WORLD.RGB']
+      
       np.testing.assert_equal(
           obs1, obs2, f'Episode {episode} mismatch: {obs1} != {obs2} ')
-
+    
+    rwd1 = env1.reward_spec()
+    rwd2 = env2.reward_spec()
+    print("Reward for env1:", rwd1)
+    print("Reward for env2:", rwd2)
+    
+      
   @parameterized.product(seed=[None, 42, 123, 1337, 12481632])
   def test_episodes_are_randomized(self, seed):
     config = substrate.get_config('running_with_scissors_in_the_matrix')
