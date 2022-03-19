@@ -256,6 +256,7 @@ def run_episode(
     print_events: An optional bool that if enabled will print events captured
       from the dmlab2d events API on any timestep where they occur.
   """
+  pygame.font.init()
   full_config.lab2d_settings.update(config_overrides)
   player_count = full_config.lab2d_settings.get('numPlayers', 1)
   print(f'Running an episode with {player_count} players.')
@@ -291,7 +292,7 @@ def run_episode(
   
   if interactive == RenderType.PYGAME:
     pygame.init()
-    pygame.font.init()
+    #pygame.font.init()
     game_display = pygame.display.set_mode(
         (observation_width * scale, observation_height * scale))
     clock = pygame.time.Clock()
