@@ -29,8 +29,6 @@ from ml_collections import config_dict
 import numpy as np
 import pygame
 
-pygame.init()
-
 import dmlab2d
 from meltingpot.python.utils.substrates import builder
 
@@ -38,6 +36,8 @@ from meltingpot.python.utils.substrates import builder
 #os.environ['SDL_VIDEODRIVER']='windib'
 #import os
 #os.environ["SDL_VIDEODRIVER"] = "dummy"
+
+#pygame.init()
 
 WHITE = (255, 255, 255)
 
