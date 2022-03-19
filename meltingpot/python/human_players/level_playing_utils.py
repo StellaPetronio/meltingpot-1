@@ -268,7 +268,7 @@ def run_episode(
   action_reader = ActionReader(env, action_map)
 
   if interactive == RenderType.PYGAME:
-    #pygame.init()
+    pygame.init()
     pygame.display.set_caption('Melting Pot: {}'.format(
         full_config.lab2d_settings.levelName))
     font = pygame.font.SysFont(None, text_font_size)
