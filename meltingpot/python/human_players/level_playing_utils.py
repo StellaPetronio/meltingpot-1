@@ -29,7 +29,7 @@ from ml_collections import config_dict
 import numpy as np
 import pygame
 
-pygame.font.init()
+pygame.init()
 
 import dmlab2d
 from meltingpot.python.utils.substrates import builder
