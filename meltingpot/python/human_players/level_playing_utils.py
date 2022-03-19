@@ -35,8 +35,8 @@ from meltingpot.python.utils.substrates import builder
 
 #import os
 #os.environ['SDL_VIDEODRIVER']='windib'
-#import os
-#os.environ["SDL_VIDEODRIVER"] = "dummy"
+import os
+os.environ["SDL_VIDEODRIVER"] = "dummy"
 
 WHITE = (255, 255, 255)
 
@@ -256,7 +256,7 @@ def run_episode(
     print_events: An optional bool that if enabled will print events captured
       from the dmlab2d events API on any timestep where they occur.
   """
-  pygame.font.init()
+  #pygame.font.init()
   full_config.lab2d_settings.update(config_overrides)
   player_count = full_config.lab2d_settings.get('numPlayers', 1)
   print(f'Running an episode with {player_count} players.')
