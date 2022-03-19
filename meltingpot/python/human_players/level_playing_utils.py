@@ -271,7 +271,7 @@ def run_episode(
     #pygame.init()
     pygame.display.set_caption('Melting Pot: {}'.format(
         full_config.lab2d_settings.levelName))
-    pygame.font.init()
+    #pygame.font.init()
     font = pygame.font.SysFont(None, text_font_size)
 
   scale = 1
@@ -291,6 +291,7 @@ def run_episode(
   
   if interactive == RenderType.PYGAME:
     pygame.init()
+    pygame.font.init()
     game_display = pygame.display.set_mode(
         (observation_width * scale, observation_height * scale))
     clock = pygame.time.Clock()
