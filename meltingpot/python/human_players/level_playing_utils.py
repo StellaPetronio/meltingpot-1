@@ -37,7 +37,7 @@ from meltingpot.python.utils.substrates import builder
 #import os
 #os.environ["SDL_VIDEODRIVER"] = "dummy"
 
-#pygame.init()
+pygame.init()
 
 WHITE = (255, 255, 255)
 
