@@ -271,6 +271,7 @@ def run_episode(
     #pygame.init()
     pygame.display.set_caption('Melting Pot: {}'.format(
         full_config.lab2d_settings.levelName))
+    pygame.font.init()
     font = pygame.font.SysFont(None, text_font_size)
 
   scale = 1
