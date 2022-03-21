@@ -311,38 +311,44 @@ def create_berry_prefab(lua_index: int):
                           "*": COLORS[0],
                           "@": shapes.scale_color(COLORS[0], 1.5),
                           "#": (255, 255, 255, 255),
-                          "x": (0, 0, 0, 0)
+                          "x": (200, 200, 0, 0)
+                          #"x": (0, 0, 0, 0)
                       },
                       {
                           "*": COLORS[1],
                           "@": shapes.scale_color(COLORS[1], 1.5),
                           "#": (255, 255, 255, 255),
-                          "x": (0, 0, 0, 0)
+                          "x": (200, 200, 0, 0)
+                          #"x": (0, 0, 0, 0)
                       },
                       {
                           "*": COLORS[2],
                           "@": shapes.scale_color(COLORS[2], 1.5),
                           "#": (255, 255, 255, 255),
-                          "x": (0, 0, 0, 0)
+                          "x": (200, 200, 0, 0)
+                          #"x": (0, 0, 0, 0)
                       },
                       # Ripe colors
                       {
                           "*": COLORS[0],
                           "@": shapes.scale_color(COLORS[0], 1.5),
                           "#": (255, 255, 255, 255),
-                          "x": (0, 0, 0, 0)
+                          "x": (200, 200, 0, 0)
+                          #"x": (0, 0, 0, 0)
                       },
                       {
                           "*": COLORS[1],
                           "@": shapes.scale_color(COLORS[1], 1.5),
                           "#": (255, 255, 255, 255),
-                          "x": (0, 0, 0, 0)
+                          "x": (200, 200, 0, 0)
+                          #"x": (0, 0, 0, 0)
                       },
                       {
                           "*": COLORS[2],
                           "@": shapes.scale_color(COLORS[2], 1.5),
                           "#": (255, 255, 255, 255),
-                          "x": (0, 0, 0, 0)
+                          "x": (200, 200, 0, 0)
+                          #"x": (0, 0, 0, 0)
                       },
                   ],
                   # Note: the berries do not rotate in this version (unlike in
