@@ -179,7 +179,8 @@ WALL = {
             "kwargs": {
                 "spriteNames": ["Wall"],
                 # This color is a dark shade of purple.
-                "spriteRGBColors": [(66, 28, 82)]
+                #"spriteRGBColors": [(66, 28, 82)]
+                "spriteRGBColors": [(200, 200, 0)]
             }
         },
         {
