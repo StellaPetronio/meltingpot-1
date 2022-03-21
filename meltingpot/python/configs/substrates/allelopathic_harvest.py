@@ -179,8 +179,8 @@ WALL = {
             "kwargs": {
                 "spriteNames": ["Wall"],
                 # This color is a dark shade of purple.
-                #"spriteRGBColors": [(66, 28, 82)]
-                "spriteRGBColors": [(200, 200, 0)]
+                "spriteRGBColors": [(66, 28, 82)]
+                #"spriteRGBColors": [(200, 200, 0)]
             }
         },
         {
@@ -775,7 +775,8 @@ def create_marking_overlay(player_idx: int) -> Dict[str, Any]:
                   "spriteShapes": [MARKING_LEVEL_1,
                                    MARKING_LEVEL_2,
                                    MARKING_LEVEL_3],
-                  "palettes": [shapes.get_palette((205, 205, 205))] * 3,
+                  #"palettes": [shapes.get_palette((205, 205, 205))] * 3,
+                  "palettes": [shapes.get_palette((66, 28, 82))] * 3,
                   "noRotates": [False] * 3
               }
           },
