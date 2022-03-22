@@ -309,21 +309,24 @@ def create_berry_prefab(lua_index: int):
                       # Unripe colors
                       {
                           "*": COLORS[0],
-                          "@": shapes.scale_color(COLORS[0], 1.5),
+                          "@": shapes.scale_color(COLORS[0], 0.5)
+                          #"@": shapes.scale_color(COLORS[0], 1.5),
                           "#": (255, 255, 255, 255),
                           "x": (200, 200, 0, 0)
                           #"x": (0, 0, 0, 0)
                       },
                       {
                           "*": COLORS[1],
-                          "@": shapes.scale_color(COLORS[1], 1.5),
+                          "@": shapes.scale_color(COLORS[0], 0.5)
+                          #"@": shapes.scale_color(COLORS[1], 1.5),
                           "#": (255, 255, 255, 255),
                           "x": (200, 200, 0, 0)
                           #"x": (0, 0, 0, 0)
                       },
                       {
                           "*": COLORS[2],
-                          "@": shapes.scale_color(COLORS[2], 1.5),
+                          "@": shapes.scale_color(COLORS[0], 0.5)
+                          #"@": shapes.scale_color(COLORS[2], 1.5),
                           "#": (255, 255, 255, 255),
                           "x": (200, 200, 0, 0)
                           #"x": (0, 0, 0, 0)
@@ -331,24 +334,27 @@ def create_berry_prefab(lua_index: int):
                       # Ripe colors
                       {
                           "*": COLORS[0],
-                          "@": shapes.scale_color(COLORS[0], 1.5),
+                          "@": shapes.scale_color(COLORS[0], 0.5)
+                          #"@": shapes.scale_color(COLORS[0], 1.5),
                           "#": (255, 255, 255, 255),
                           "x": (200, 200, 0, 0)
                           #"x": (0, 0, 0, 0)
                       },
                       {
                           "*": COLORS[1],
-                          "@": shapes.scale_color(COLORS[1], 1.5),
+                          "@": shapes.scale_color(COLORS[1], 0.5)
+                          #"@": shapes.scale_color(COLORS[1], 1.5),
                           "#": (255, 255, 255, 255),
-                          "x": (200, 200, 0, 0)
+                          "x": (200, 200, 200, 0)
                           #"x": (0, 0, 0, 0)
                       },
                       {
                           "*": COLORS[2],
-                          "@": shapes.scale_color(COLORS[2], 1.5),
+                          "@": shapes.scale_color(COLORS[2], 0.5)
+                          #"@": shapes.scale_color(COLORS[2], 1.5),
                           "#": (255, 255, 255, 255),
-                          #"x": (200, 200, 0, 0)
-                          "x": [shapes.get_palette((255, 255, 255))]
+                          "x": (200, 200, 200, 0)
+                          #"x": [shapes.get_palette((255, 255, 255))]
                           #"x": (0, 0, 0, 0)
                       },
                   ],
