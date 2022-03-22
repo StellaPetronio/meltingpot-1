@@ -347,7 +347,8 @@ def create_berry_prefab(lua_index: int):
                           "*": COLORS[2],
                           "@": shapes.scale_color(COLORS[2], 1.5),
                           "#": (255, 255, 255, 255),
-                          "x": (200, 200, 0, 0)
+                          #"x": (200, 200, 0, 0)
+                          "x": [shapes.get_palette((255, 255, 255))]
                           #"x": (0, 0, 0, 0)
                       },
                   ],
