@@ -56,7 +56,7 @@ AVATAR = {
         {
             "component": "Appearance",
             "kwargs": {
-                "renderMode": "ascii_shape"
+                "renderMode": "ascii_shape",
                 "spriteNames": ["Avatar"],
                 "spriteShapes": [shapes.CUTE_AVATAR],
                 #"spriteRGBColors": [(0, 0, 128)],
