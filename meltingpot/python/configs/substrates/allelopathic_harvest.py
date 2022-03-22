@@ -179,15 +179,16 @@ WALL = {
         {
             "component": "Appearance",
             "kwargs": {
+                "renderMode": "ascii_shape",
                 "spriteNames": ["Wall"],
                 # This color is a dark shade of purple.
-                "spriteRGBColors": [(66, 28, 82)]
-                #"spriteShapes": [shapes.WALL],
-                #"palettes": [{"*": (95, 95, 95, 255),
-                #              "&": (100, 100, 100, 255),
-                #              "@": (109, 109, 109, 255),
-                #              "#": (152, 152, 152, 255)}],
-                #"noRotates": [False]
+                #"spriteRGBColors": [(66, 28, 82)]
+                "spriteShapes": [shapes.WALL],
+                "palettes": [{"*": (95, 95, 95, 255),
+                              "&": (100, 100, 100, 255),
+                              "@": (109, 109, 109, 255),
+                              "#": (152, 152, 152, 255)}],
+                "noRotates": [False]
             }
         },
         {
