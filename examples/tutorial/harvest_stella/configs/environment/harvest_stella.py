@@ -14,7 +14,7 @@
 """Configuration for tutorial level: Harvest."""
 
 from ml_collections import config_dict
-from meltingpot.python import shapes
+from meltingpot.python.utils.substrates import shapes
 
 #we need the spawn point in order to to see the avatars in action
 SPAWN_POINT = {
