@@ -50,36 +50,38 @@ NUM_PLAYERS = 16
 NUM_BERRY_TYPES = 3
 
 DEFAULT_ASCII_MAP = """
-333PPPP12PPP322P32PPP1P13P3P3
-1PPPP2PP122PPP3P232121P2PP2P1
-P1P3P11PPP13PPP31PPPP23PPPPPP
-PPPPP2P2P1P2P3P33P23PP2P2PPPP
-P1PPPPPPP2PPP12311PP3321PPPPP
-133P2PP2PPP3PPP1PPP2213P112P1
-3PPPPPPPPPPPPP31PPPPPP1P3112P
-PP2P21P21P33PPPPPPP3PP2PPPP1P
-PPPPP1P1P32P3PPP22PP1P2PPPP2P
-PPP3PP3122211PPP2113P3PPP1332
-PP12132PP1PP1P321PP1PPPPPP1P3
-PPP222P12PPPP1PPPP1PPP321P11P
-PPP2PPPP3P2P1PPP1P23322PP1P13
-23PPP2PPPP2P3PPPP3PP3PPP3PPP2
-2PPPP3P3P3PP3PP3P1P3PP11P21P1
-21PPP2PP331PP3PPP2PPPPP2PP3PP
-P32P2PP2P1PPPPPPP12P2PPP1PPPP
-P3PP3P2P21P3PP2PP11PP1323P312
-2P1PPPPP1PPP1P2PPP3P32P2P331P
-PPPPP1312P3P2PPPP3P32PPPP2P11
-P3PPPP221PPP2PPPPPPPP1PPP311P
-32P3PPPPPPPPPP31PPPP3PPP13PPP
-PPP3PPPPP3PPPPPP232P13PPPPP1P
-P1PP1PPP2PP3PPPPP33321PP2P3PP
-P13PPPP1P333PPPP2PP213PP2P3PP
-1PPPPP3PP2P1PP21P3PPPP231P2PP
-1331P2P12P2PPPP2PPP3P23P21PPP
-P3P131P3PPP13P1PPP222PPPP11PP
-2P3PPPPPPPP2P323PPP2PPP1PPP2P
-21PPPPPPP12P23P1PPPPPP13P3P11
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+W333PPPP12PPP322P32PPP1P13P3P3W
+W1PPPP2PP122PPP3P232121P2PP2P1W
+WP1P3P11PPP13PPP31PPPP23PPPPPPW
+WPPPPP2P2P1P2P3P33P23PP2P2PPPPW
+WP1PPPPPPP2PPP12311PP3321PPPPPW
+W133P2PP2PPP3PPP1PPP2213P112P1W
+W3PPPPPPPPPPPPP31PPPPPP1P3112PW
+WPP2P21P21P33PPPPPPP3PP2PPPP1PW
+WPPPPP1P1P32P3PPP22PP1P2PPPP2PW
+WPPP3PP3122211PPP2113P3PPP1332W
+WPP12132PP1PP1P321PP1PPPPPP1P3W
+WPPP222P12PPPP1PPPP1PPP321P11PW
+WPPP2PPPP3P2P1PPP1P23322PP1P13W
+W23PPP2PPPP2P3PPPP3PP3PPP3PPP2W
+W2PPPP3P3P3PP3PP3P1P3PP11P21P1W
+W21PPP2PP331PP3PPP2PPPPP2PP3PPW
+WP32P2PP2P1PPPPPPP12P2PPP1PPPPW
+WP3PP3P2P21P3PP2PP11PP1323P312W
+W2P1PPPPP1PPP1P2PPP3P32P2P331PW
+WPPPPP1312P3P2PPPP3P32PPPP2P11W
+WP3PPPP221PPP2PPPPPPPP1PPP311PW
+W32P3PPPPPPPPPP31PPPP3PPP13PPPW
+WPPP3PPPPP3PPPPPP232P13PPPPP1PW
+WP1PP1PPP2PP3PPPPP33321PP2P3PPW
+WP13PPPP1P333PPPP2PP213PP2P3PPW
+W1PPPPP3PP2P1PP21P3PPPP231P2PPW
+W1331P2P12P2PPPP2PPP3P23P21PPPW
+WP3P131P3PPP13P1PPP222PPPP11PPW
+W2P3PPPPPPPP2P323PPP2PPP1PPP2PW
+W21PPPPPPP12P23P1PPPPPP13P3P11W
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
 """
 
 MARKING_LEVEL_1 = """
@@ -179,8 +181,13 @@ WALL = {
             "kwargs": {
                 "spriteNames": ["Wall"],
                 # This color is a dark shade of purple.
-                "spriteRGBColors": [(66, 28, 82)]
-                #"spriteRGBColors": [(200, 200, 0)]
+                #"spriteRGBColors": [(66, 28, 82)]
+                "spriteShapes": [shapes.WALL],
+                "palettes": [{"*": (95, 95, 95, 255),
+                              "&": (100, 100, 100, 255),
+                              "@": (109, 109, 109, 255),
+                              "#": (152, 152, 152, 255)}],
+                "noRotates": [False]
             }
         },
         {
@@ -309,53 +316,52 @@ def create_berry_prefab(lua_index: int):
                       # Unripe colors
                       {
                           "*": COLORS[0],
-                          "@": shapes.scale_color(COLORS[0], 0.5),
-                          #"@": shapes.scale_color(COLORS[0], 1.5),
+                          #"@": shapes.scale_color(COLORS[0], 0.5),
+                          "@": shapes.scale_color(COLORS[0], 1.5),
                           "#": (255, 255, 255, 255),
-                          "x": (200, 200, 0, 0)
-                          #"x": (0, 0, 0, 0)
+                          #"x": (200, 200, 0, 0)
+                          "x": (0, 0, 0, 0)
                       },
                       {
                           "*": COLORS[1],
-                          "@": shapes.scale_color(COLORS[0], 0.5),
-                          #"@": shapes.scale_color(COLORS[1], 1.5),
+                          #"@": shapes.scale_color(COLORS[0], 0.5),
+                          "@": shapes.scale_color(COLORS[1], 1.5),
                           "#": (255, 255, 255, 255),
-                          "x": (200, 200, 0, 0)
-                          #"x": (0, 0, 0, 0)
+                          #"x": (200, 200, 0, 0)
+                          "x": (0, 0, 0, 0)
                       },
                       {
                           "*": COLORS[2],
-                          "@": shapes.scale_color(COLORS[0], 0.5),
-                          #"@": shapes.scale_color(COLORS[2], 1.5),
+                          #"@": shapes.scale_color(COLORS[0], 0.5),
+                          "@": shapes.scale_color(COLORS[2], 1.5),
                           "#": (255, 255, 255, 255),
-                          "x": (200, 200, 0, 0)
-                          #"x": (0, 0, 0, 0)
+                          #"x": (200, 200, 0, 0)
+                          "x": (0, 0, 0, 0)
                       },
                       # Ripe colors
                       {
                           "*": COLORS[0],
-                          "@": shapes.scale_color(COLORS[0], 0.5),
-                          #"@": shapes.scale_color(COLORS[0], 1.5),
+                          #"@": shapes.scale_color(COLORS[0], 0.5),
+                          "@": shapes.scale_color(COLORS[0], 1.5),
                           "#": (255, 255, 255, 255),
-                          "x": (200, 200, 0, 0)
-                          #"x": (0, 0, 0, 0)
+                          #"x": (200, 200, 0, 0)
+                          "x": (0, 0, 0, 0)
                       },
                       {
                           "*": COLORS[1],
                           "@": shapes.scale_color(COLORS[1], 0.5),
                           #"@": shapes.scale_color(COLORS[1], 1.5),
                           "#": (255, 255, 255, 255),
-                          "x": (200, 200, 200, 0)
-                          #"x": (0, 0, 0, 0)
+                          #"x": (200, 200, 200, 0)
+                          "x": (0, 0, 0, 0)
                       },
                       {
                           "*": COLORS[2],
-                          "@": shapes.scale_color(COLORS[2], 0.5),
-                          #"@": shapes.scale_color(COLORS[2], 1.5),
+                          #"@": shapes.scale_color(COLORS[2], 0.5),
+                          "@": shapes.scale_color(COLORS[2], 1.5),
                           "#": (255, 255, 255, 255),
-                          "x": (200, 200, 200, 0)
-                          #"x": [shapes.get_palette((255, 255, 255))]
-                          #"x": (0, 0, 0, 0)
+                          #"x": (200, 200, 200, 0)
+                          "x": (0, 0, 0, 0)
                       },
                   ],
                   # Note: the berries do not rotate in this version (unlike in
