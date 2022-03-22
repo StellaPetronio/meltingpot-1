@@ -224,7 +224,7 @@ def get_config():
               "wall": WALL,
               ",": create_ground_prefab()
             },
-          "charPrefabMap": {"_": "spawn_point", "*": "wall"},
+          "charPrefabMap": {"_": "spawn_point", "*": "wall", ",": "ground"},
           "playerPalettes": [],
       },
   }
