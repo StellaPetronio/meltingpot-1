@@ -14,6 +14,7 @@
 """Configuration for tutorial level: Harvest."""
 
 from ml_collections import config_dict
+from meltingpot.python import shapes
 
 #we need the spawn point in order to to see the avatars in action
 SPAWN_POINT = {
@@ -55,9 +56,12 @@ AVATAR = {
         {
             "component": "Appearance",
             "kwargs": {
+                "renderMode": "ascii_shape"
                 "spriteNames": ["Avatar"],
-                "spriteRGBColors": [(0, 0, 128)],
+                "spriteShapes": [shapes.CUTE_AVATAR],
+                #"spriteRGBColors": [(0, 0, 128)],
                 "palettes": [{}],  # Will be overridden.
+                "noRotates": [True],
             }
         },
         {
@@ -78,6 +82,47 @@ AVATAR = {
     ]
 }
 
+WALL = {
+    "name": "wall",
+    "components": [
+        {
+            "component": "StateManager",
+            "kwargs": {
+                "initialState": "wall",
+                "stateConfigs": [{
+                    "state": "wall",
+                    "layer": "upperPhysical",
+                    "sprite": "Wall",
+                }],
+            }
+        },
+        {
+            "component": "Transform",
+        },
+        {
+            "component": "Appearance",
+            "kwargs": {
+                "renderMode": "ascii_shape",
+                "spriteNames": ["Wall",],
+                "spriteShapes": [shapes.WALL],
+                "palettes": [shapes.WALL_PALETTE],
+                "noRotates": [True],
+            }
+        },
+        {
+            "component": "BeamBlocker",
+            "kwargs": {
+                "beamType": "gift"
+            }
+        },
+        {
+            "component": "BeamBlocker",
+            "kwargs": {
+                "beamType": "zap"
+            }
+        },
+    ]
+}
 
 def get_config():
   """Default configuration for the Harvest level."""
@@ -100,12 +145,20 @@ def get_config():
       "spriteSize":
           8,
       "simulation": {
-          "map": " _ ",
+          "map": """ 
+          *******
+          *     *
+          *  -  *
+          *     *
+          *     *
+          *******
+          """,
           "prefabs": {
               "avatar": AVATAR,
               "spawn_point": SPAWN_POINT,
+              "wall": WALL
             },
-          "charPrefabMap": {"_": "spawn_point"},
+          "charPrefabMap": {"_": "spawn_point", "*": "wall"},
           "playerPalettes": [],
       },
   }
