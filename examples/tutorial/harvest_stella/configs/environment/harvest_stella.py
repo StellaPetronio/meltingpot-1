@@ -15,7 +15,6 @@
 
 from ml_collections import config_dict
 from meltingpot.python.utils.substrates import shapes
-from python.configs.substrates.stella_substrate import create_ground_prefab
 
 BLACK = (0,0,0,255)
 SOFT_BLACK = (36,36,36,255)
@@ -129,6 +128,7 @@ WALL = {
         },
     ]
 }
+
 def create_ground_prefab():
     """Return a prefab for a colorable ground prefab."""
     
