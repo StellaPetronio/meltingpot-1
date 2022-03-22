@@ -150,6 +150,11 @@ CHAR_PREFAB_MAP = {
     "3": "berry_3",
 }
 
+BLACK = (0,0,0,255)
+SOFT_BLACK = (36,36,36,255)
+GREY = (84,84,84,255)
+SOFT_GREY = (120,120,120,255)
+
 COLORS = [
     (200, 0, 0, 255),  # 'Red'
     (0, 200, 0, 255),  # 'Green'
@@ -234,6 +239,19 @@ SPAWN_POINT = {
         },
         {
             "component": "Transform",
+        },
+        {
+            "component": "Appearance",
+            "kwards":{
+                "spriteNames": ["Black",
+                                "SoftBlack",
+                                "Grey",
+                                "SoftGrey"],
+                "spriteRGBColors": [BLACK,
+                                    SOFT_BLACK,
+                                    GREY,
+                                    SOFT_GREY]
+            }
         },
     ]
 }
