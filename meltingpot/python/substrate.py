@@ -15,6 +15,8 @@
 
 from typing import Any, Mapping, Sequence, Tuple
 
+from numpy import float16
+
 import chex
 import dm_env
 from ml_collections import config_dict
@@ -78,6 +80,7 @@ class Substrate(base.Wrapper):
       self._events_subject.on_next(event)
     return timestep
 
+  #Sequence: it's a sequence of dm_env.specs.Array which is Array(shape, dtype, name(like "REWARD"))
   def reward_spec(self) -> Sequence[dm_env.specs.Array]:
     """See base class."""
     return self._env.reward_spec()

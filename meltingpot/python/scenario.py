@@ -352,6 +352,24 @@ class Scenario(base.Wrapper):
     reward_spec: Sequence[dm_env.specs.Array] = super().reward_spec()  # pytype: disable=annotation-type-mismatch
     focal_reward_spec, _ = _partition(reward_spec, self._is_focal)
     return focal_reward_spec
+  
+  def per_capita_return(self, timestep: dm_env.TimeStep) -> Tuple[dm_env.TimeStep.reward, dm_env.TimeStep.reward]:
+    focal_rewards, background_rewards = _partition(timestep.reward, self._is_focal)
+    
+    rewards_list = []
+    for rew in (focal_rewards, background_rewards):
+      if isinstance(rew, None):
+        reward = 0
+      if isinstance(rew, (int, float)):
+        reward = rew
+      if isinstance(rew, (list, tuple, dict)):
+        reward = np.mean(rew)
+      if isinstance(rew, np.ndarray):
+        reward = np.mean(rew)
+      rewards_list.append(reward)
+    
+    return tuple(rewards_list)
+         
 
   def observables(self) -> ScenarioObservables:
     """Returns the observables for the scenario."""
