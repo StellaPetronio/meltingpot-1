@@ -15,6 +15,12 @@
 
 from ml_collections import config_dict
 from meltingpot.python.utils.substrates import shapes
+from python.configs.substrates.stella_substrate import create_ground_prefab
+
+BLACK = (0,0,0,255)
+SOFT_BLACK = (36,36,36,255)
+GREY = (84,84,84,255)
+SOFT_GREY = (120,120,120,255)
 
 #we need the spawn point in order to to see the avatars in action
 SPAWN_POINT = {
@@ -123,6 +129,65 @@ WALL = {
         },
     ]
 }
+def create_ground_prefab():
+    """Return a prefab for a colorable ground prefab."""
+    
+    names = ["BlackGround", "SoftBlackGround", "GreyGround", "SoftGreyGround"]
+    colors = [BLACK, SOFT_BLACK, GREY, SOFT_GREY]
+    
+    prefab = {
+        "name": "ground",
+        "components": [
+            {
+               "component" : "StateManager",
+               "kwargs": {
+                   "initialState": "clean",
+                   "stateConfigs": [
+                       {
+                         "state": "clean",
+                         "layer": "alternateLogic", #(understand better the meaning)
+                       },
+                       {
+                         "state": "black",
+                         "layer": "alternateLogic", #(understand better the meaning)
+                         "color": names[0], 
+                       },
+                       {
+                         "state": "softBlack",
+                         "layer": "alternateLogic", #(understand better the meaning)
+                         "color": names[1], 
+                       },
+                       {
+                         "state": "grey",
+                         "layer": "alternateLogic", #(understand better the meaning)
+                         "color": names[2], 
+                       },
+                       {
+                         "state": "softGrey",
+                         "layer": "alternateLogic", #(understand better the meaning)
+                         "color": names[3], 
+                       },
+                   ]
+                  
+               } 
+            },
+            {"component": "Transform",},
+            {
+                "component": "Appearance",
+                "kwargs":{
+                    "names": names,
+                    "RGBColors": colors
+                }
+            },
+            {
+                "component": "Ground",
+                "kwargs": {
+                    "teamNames": ["black", "softBlack", "grey", "softGrey"],
+                }
+            },
+        ]
+    }
+    return prefab 
 
 def get_config():
   """Default configuration for the Harvest level."""
@@ -147,16 +212,17 @@ def get_config():
       "simulation": {
           "map": """ 
           *******
-          *     *
+          *,,,,,*
           *  _  *
-          *     *
-          *     *
+          *,,,,,*
+          *,,,,,*
           *******
           """,
           "prefabs": {
               "avatar": AVATAR,
               "spawn_point": SPAWN_POINT,
-              "wall": WALL
+              "wall": WALL,
+              ",": create_ground_prefab()
             },
           "charPrefabMap": {"_": "spawn_point", "*": "wall"},
           "playerPalettes": [],
