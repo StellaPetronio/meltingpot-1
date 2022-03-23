@@ -40,6 +40,7 @@ from meltingpot.python.utils.substrates import builder
 pygame.init()
 
 WHITE = (255, 255, 255)
+GREY = (84,84,84,255)
 
 MOVEMENT_MAP = {
     'NONE': 0,
@@ -293,9 +294,9 @@ def run_episode(
   
   if interactive == RenderType.PYGAME:
     pygame.init()
-    #pygame.font.init()
     game_display = pygame.display.set_mode(
         (observation_width * scale, observation_height * scale))
+    game_display.fill(GREY)
     clock = pygame.time.Clock()
   stop = False
 
