@@ -210,6 +210,7 @@ def run_episode(
     text_x_pos: int = 20,
     text_y_pos: int = 20,
     text_color: Tuple[int, ...] = WHITE,
+    background_color: Tuple[int, ...] = WHITE,
     env_builder: EnvBuilder = builder.builder,
     print_events: Optional[bool] = False,
     ) -> None:
@@ -296,7 +297,7 @@ def run_episode(
     pygame.init()
     game_display = pygame.display.set_mode(
         (observation_width * scale, observation_height * scale))
-    game_display.fill(GREY)
+    game_display.fill(background_color)
     clock = pygame.time.Clock()
   stop = False
 
