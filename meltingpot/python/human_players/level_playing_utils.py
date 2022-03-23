@@ -349,11 +349,11 @@ def run_episode(
       obs = np.transpose(obs, (1, 0, 2))  # PyGame is column major!
 
       surface = pygame.surfarray.make_surface(obs)
-      #surface.fill(GREY)
+      surface.fill(GREY)
       rect = surface.get_rect()
 
       surf = pygame.transform.scale(surface, (rect[2] * scale, rect[3] * scale))
-      surf.fill(GREY)
+      #surf.fill(GREY)
       game_display.blit(surf, dest=(0, 0))
 
       # show text
