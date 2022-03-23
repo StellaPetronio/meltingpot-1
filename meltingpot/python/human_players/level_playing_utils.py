@@ -297,7 +297,7 @@ def run_episode(
     pygame.init()
     game_display = pygame.display.set_mode(
         (observation_width * scale, observation_height * scale))
-    game_display.fill(background_color)
+    #game_display.fill(background_color)
     clock = pygame.time.Clock()
   stop = False
 
@@ -341,6 +341,7 @@ def run_episode(
 
     # pygame display
     if interactive == RenderType.PYGAME:
+      game_display.fill(GREY)
       # show visual observation
       if render_observation in timestep.observation:
         obs = timestep.observation[render_observation]
@@ -349,7 +350,7 @@ def run_episode(
       obs = np.transpose(obs, (1, 0, 2))  # PyGame is column major!
 
       surface = pygame.surfarray.make_surface(obs)
-      surface.fill(GREY)
+      #surface.fill(GREY)
       rect = surface.get_rect()
 
       surf = pygame.transform.scale(surface, (rect[2] * scale, rect[3] * scale))
