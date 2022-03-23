@@ -298,7 +298,7 @@ def run_episode(
     game_display = pygame.display.set_mode(
         (observation_width * scale, observation_height * scale))
     game_display.fill(background_color)
-    game_display.display.update()
+    pygame.display.update()
     clock = pygame.time.Clock()
   stop = False
 
