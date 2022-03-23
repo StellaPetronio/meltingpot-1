@@ -351,8 +351,7 @@ def run_episode(
 
       surface = pygame.surfarray.make_surface(obs)
       surface.fill(GREY)
-      surface = pygame.surfarray.make_surface(obs)
-      
+    
       rect = surface.get_rect()
 
       surf = pygame.transform.scale(surface, (rect[2] * scale, rect[3] * scale))
