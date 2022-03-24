@@ -201,8 +201,8 @@ def run_episode(
     action_map: ActionMap,
     full_config: config_dict.ConfigDict,
     interactive: RenderType = RenderType.PYGAME,
-    screen_width: int = 600,
-    screen_height: int = 400,
+    screen_width: int = 900,
+    screen_height: int = 700,
     fps: int = 8,
     verbose_fn: Optional[Callable[[dm_env.TimeStep, int], None]] = None,
     text_display_fn: Optional[Callable[[dm_env.TimeStep, int], str]] = None,
@@ -290,8 +290,8 @@ def run_episode(
   observation_shape = obs_spec.shape
   observation_height = observation_shape[0]
   observation_width = observation_shape[1]
-  scale = min(screen_height // observation_height,
-              screen_width // observation_width)
+  # scale = min(screen_height // observation_height,
+              #screen_width // observation_width)
   
   if interactive == RenderType.PYGAME:
     pygame.init()
