@@ -210,7 +210,7 @@ def run_episode(
     text_x_pos: int = 20,
     text_y_pos: int = 20,
     text_color: Tuple[int, ...] = WHITE,
-    background_color: Tuple[int, ...] = WHITE,
+    background_color: Tuple[int, ...] = GREY,
     env_builder: EnvBuilder = builder.builder,
     print_events: Optional[bool] = False,
     ) -> None:
@@ -304,7 +304,7 @@ def run_episode(
 
   # Game loop
   while True:
-
+    game_display.fill(background_color)
     # Check for pygame controls
     if interactive == RenderType.PYGAME:
       for event in pygame.event.get():
@@ -352,7 +352,7 @@ def run_episode(
 
       surface = pygame.surfarray.make_surface(obs)
       #surface.fill(GREY)
-      surface.map_rgb(GREY)
+      #surface.map_rgb(GREY)
     
       rect = surface.get_rect()
 
