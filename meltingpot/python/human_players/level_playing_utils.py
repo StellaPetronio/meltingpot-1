@@ -364,7 +364,7 @@ def run_episode(
       #((screen_height, screen_width))
       #surf.fill(GREY)
       #game_display.blit(surf, dest=(0, 0))
-      game_display.blit(surf, dest=(1, 1))
+      game_display.blit(surf, dest=(1, 4))
 
       # show text
       if text_display_fn:
