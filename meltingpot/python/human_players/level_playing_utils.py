@@ -290,13 +290,12 @@ def run_episode(
   observation_shape = obs_spec.shape
   observation_height = observation_shape[0]
   observation_width = observation_shape[1]
-  # scale = min(screen_height // observation_height,
-              #screen_width // observation_width)
+  #scale = min(screen_height // observation_height, screen_width // observation_width)
   
   if interactive == RenderType.PYGAME:
     pygame.init()
-    game_display = pygame.display.set_mode(
-        (observation_width * scale, observation_height * scale))
+    #game_display = pygame.display.set_mode((observation_width * scale, observation_height * scale))
+    game_display = pygame.display.set_mode((screen_height, screen_width))
     game_display.fill(background_color)
     pygame.display.update()
     clock = pygame.time.Clock()
@@ -360,7 +359,9 @@ def run_episode(
     
       rect = surface.get_rect()
 
-      surf = pygame.transform.scale(surface, (rect[2] * scale, rect[3] * scale))
+      #surf = pygame.transform.scale(surface, (rect[2] * scale, rect[3] * scale))
+      surf = pygame.transform.scale(surface, (rect[2] * screen_height, rect[3] * screen_width))
+      #((screen_height, screen_width))
       #surf.fill(GREY)
       game_display.blit(surf, dest=(0, 0))
 
