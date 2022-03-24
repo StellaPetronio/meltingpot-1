@@ -363,7 +363,8 @@ def run_episode(
       surf = pygame.transform.scale(surface, (screen_height, screen_width))
       #((screen_height, screen_width))
       #surf.fill(GREY)
-      game_display.blit(surf, dest=(0, 0))
+      #game_display.blit(surf, dest=(0, 0))
+      game_display.blit(surf)
 
       # show text
       if text_display_fn:
