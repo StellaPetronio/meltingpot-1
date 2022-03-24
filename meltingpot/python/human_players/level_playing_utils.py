@@ -352,6 +352,7 @@ def run_episode(
 
       surface = pygame.surfarray.make_surface(obs)
       #surface.fill(GREY)
+      surface.map_rgb()
     
       rect = surface.get_rect()
 
