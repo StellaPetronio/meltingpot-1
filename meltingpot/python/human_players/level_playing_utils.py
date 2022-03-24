@@ -305,8 +305,8 @@ def run_episode(
   # Game loop
   while True:
         
-    game_display.fill(background_color)
-    pygame.display.flip()
+  #game_display.fill(background_color)
+  #pygame.display.flip()
     
     # Check for pygame controls
     if interactive == RenderType.PYGAME:
@@ -345,8 +345,8 @@ def run_episode(
 
     # pygame display
     if interactive == RenderType.PYGAME:
-      game_display.fill(background_color)
-      pygame.display.flip()
+     # game_display.fill(background_color)
+   # pygame.display.flip()
       # show visual observation
       if render_observation in timestep.observation:
         obs = timestep.observation[render_observation]
