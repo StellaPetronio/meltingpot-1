@@ -295,7 +295,7 @@ def run_episode(
   if interactive == RenderType.PYGAME:
     pygame.init()
     #game_display = pygame.display.set_mode((observation_width * scale, observation_height * scale))
-    game_display = pygame.display.set_mode((screen_height, screen_width))
+    game_display = pygame.display.set_mode((observation_height, observation_width))
     #game_display.fill(background_color)
     pygame.display.update()
     clock = pygame.time.Clock()
@@ -360,7 +360,7 @@ def run_episode(
       rect = surface.get_rect()
 
       #surf = pygame.transform.scale(surface, (rect[2] * scale, rect[3] * scale))
-      surf = pygame.transform.scale(surface, (screen_height, screen_width))
+      surf = pygame.transform.scale(surface, (observation_height, observation_width))
       #((screen_height, screen_width))
       #surf.fill(GREY)
       #game_display.blit(surf, dest=(0, 0))
