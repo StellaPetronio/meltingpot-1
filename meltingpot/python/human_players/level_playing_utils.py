@@ -363,7 +363,7 @@ def run_episode(
       #surf = pygame.transform.scale(surface, (observation_height, observation_width))
       #surf.fill(GREY)
       #game_display.blit(surf, dest=(0, 0))
-      game_display.blit(surf, dest=(rect[2], rect[3]))
+      game_display.blit(surf, dest=(10, 10))
 
       # show text
       if text_display_fn:
